@@ -153,4 +153,12 @@
         analisar();
     </script>
 </body>
+<script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js')
+                .then(() => console.log("DeliveryPro: Pronto para uso Offline"))
+                .catch(err => console.log("Erro no SW:", err));
+        }
+    </script>
+    <link rel="manifest" href="./manifest.json">
 </html>
